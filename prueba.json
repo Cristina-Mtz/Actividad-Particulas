@@ -1,0 +1,68 @@
+[
+     {
+          "id": "999",
+          "origen_x": 121,
+          "origen_y": 21,
+          "destino_x": 323,
+          "destino_y": 325,
+          "velocidad": "234",
+          "red": 44,
+          "green": 44,
+          "blue": 33
+     },
+     {
+          "id": "222",
+          "origen_x": 121,
+          "origen_y": 21,
+          "destino_x": 323,
+          "destino_y": 325,
+          "velocidad": "234",
+          "red": 44,
+          "green": 44,
+          "blue": 33
+     },
+     {
+          "id": "102",
+          "origen_x": 324,
+          "origen_y": 53,
+          "destino_x": 233,
+          "destino_y": 222,
+          "velocidad": "2324",
+          "red": 233,
+          "green": 123,
+          "blue": 33
+     },
+     {
+          "id": "100",
+          "origen_x": 324,
+          "origen_y": 53,
+          "destino_x": 233,
+          "destino_y": 222,
+          "velocidad": "2324",
+          "red": 233,
+          "green": 123,
+          "blue": 33
+     },
+     {
+          "id": "1033",
+          "origen_x": 324,
+          "origen_y": 53,
+          "destino_x": 233,
+          "destino_y": 222,
+          "velocidad": "2324",
+          "red": 233,
+          "green": 123,
+          "blue": 33
+     },
+     {
+          "id": "121",
+          "origen_x": 121,
+          "origen_y": 21,
+          "destino_x": 323,
+          "destino_y": 325,
+          "velocidad": "234",
+          "red": 44,
+          "green": 44,
+          "blue": 33
+     }
+]
