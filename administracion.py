@@ -52,4 +52,3 @@ class Administracion:
             return 1
         except:
             return 0
-        
