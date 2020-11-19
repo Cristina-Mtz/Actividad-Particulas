@@ -1,8 +1,10 @@
 from particula import Particula
 import json
+
 class Administracion:
     def __init__(self):
         self.__particulas = [] 
+       
 
     def agregar_final(self, particula:Particula):
         self.__particulas.append(particula)
@@ -52,3 +54,5 @@ class Administracion:
             return 1
         except:
             return 0
+
+
