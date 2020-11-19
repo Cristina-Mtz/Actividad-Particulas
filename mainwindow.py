@@ -31,31 +31,32 @@ class MainWindow(QMainWindow):
 
     def wheelEvent(self, event):
         if event.delta() > 0:
-            self.ui.graphicsView.scale(1.2, 1.2)
+            self.ui.graphicsView.scale(1.3, 1.3)
         else:
-            self.ui.graphicsView.scale(0.8, 0.8)
+            self.ui.graphicsView.scale(0.9, 0.9)
 
     @Slot()
     def dibujar(self):
         pen = QPen()
-        pen.setWidth(3)
+        pen.setWidth(2)
 
-        for particula in self.adminstracion.__particulas:
-            red = Particula.red
-            green = Particula.green
-            blue = Particula.blue
+        for particula in self.administracion:
 
-            color = QColor(red, green, blue)
+            r = particula.red
+            g = particula.green
+            b = particula.blue
+            color = QColor(r, g, b)
             pen.setColor(color)
 
-            origen_x = Particula.origen_x
-            origen_y = Particula.origen_y
-            destino_x = Particula.destino_x
-            destino_y = Particula.destino_y
+            ox = particula.origen_x
+            oy = particula.origen_y
+            dx = particula.destino_x
+            dy = particula.destino_y
+            
 
-            self.scene.addEllipse(Particula.origen_x, Particula.origen_y, 3, 3 ,pen)
-            self.scene.addEllipse(Particula.destino_x, Particula.destino_y, 3, 3, pen)
-            self.scene.addLine(Particula.origen_x+3, Particula.origen_y+3, Particula.destino_x, Particula.destino_y, pen)
+            self.scene.addEllipse(ox, oy, 4, 4 ,pen)
+            self.scene.addEllipse(dx, dy, 4, 4, pen)
+            self.scene.addLine(ox, oy, dx, dy, pen)
 
 
     @Slot()
