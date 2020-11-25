@@ -134,7 +134,8 @@ class MainWindow(QMainWindow):
         particulas = []
         for particula in self.administracion:
             particulas.append(particula)
-        particulas.sort(key= lambda particula: particula.velocidad, reverse=False)
+        particulas.sort(key = lambda particula: particula.velocidad, reverse=False)
+
 
         row = 0
         for particula in particulas:
@@ -160,6 +161,7 @@ class MainWindow(QMainWindow):
             self.ui.table.setItem(row, 8, green_widget)
             self.ui.table.setItem(row, 9, blue_widget) 
             row += 1
+            
         for particula in particulas:
             self.ui.plainTextEdit.insertPlainText(str(particula))
 
