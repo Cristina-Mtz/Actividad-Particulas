@@ -17,20 +17,26 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(519, 460)
+        MainWindow.resize(671, 536)
         self.actionAbrir = QAction(MainWindow)
         self.actionAbrir.setObjectName(u"actionAbrir")
         self.actionGuardad = QAction(MainWindow)
         self.actionGuardad.setObjectName(u"actionGuardad")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.gridLayout_5 = QGridLayout(self.centralwidget)
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
         self.dibujo_tabWidget = QTabWidget(self.centralwidget)
         self.dibujo_tabWidget.setObjectName(u"dibujo_tabWidget")
-        self.dibujo_tabWidget.setGeometry(QRect(10, 20, 493, 412))
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.gridLayout_2 = QGridLayout(self.tab)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.plainTextEdit = QPlainTextEdit(self.tab)
+        self.plainTextEdit.setObjectName(u"plainTextEdit")
+
+        self.gridLayout_2.addWidget(self.plainTextEdit, 0, 1, 1, 1)
+
         self.groupBox = QGroupBox(self.tab)
         self.groupBox.setObjectName(u"groupBox")
         self.gridLayout = QGridLayout(self.groupBox)
@@ -155,11 +161,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.groupBox, 0, 0, 1, 1)
 
-        self.plainTextEdit = QPlainTextEdit(self.tab)
-        self.plainTextEdit.setObjectName(u"plainTextEdit")
-
-        self.gridLayout_2.addWidget(self.plainTextEdit, 0, 1, 1, 1)
-
         self.dibujo_tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
@@ -206,10 +207,28 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addWidget(self.limpiar_pushButton_2, 1, 1, 1, 1)
 
         self.dibujo_tabWidget.addTab(self.tab_3, "")
+
+        self.gridLayout_5.addWidget(self.dibujo_tabWidget, 0, 0, 1, 3)
+
+        self.distancia_pushButton_2 = QPushButton(self.centralwidget)
+        self.distancia_pushButton_2.setObjectName(u"distancia_pushButton_2")
+
+        self.gridLayout_5.addWidget(self.distancia_pushButton_2, 1, 1, 1, 1)
+
+        self.velocidad_pushButton_3 = QPushButton(self.centralwidget)
+        self.velocidad_pushButton_3.setObjectName(u"velocidad_pushButton_3")
+
+        self.gridLayout_5.addWidget(self.velocidad_pushButton_3, 1, 2, 1, 1)
+
+        self.id_pushButton = QPushButton(self.centralwidget)
+        self.id_pushButton.setObjectName(u"id_pushButton")
+
+        self.gridLayout_5.addWidget(self.id_pushButton, 1, 0, 1, 1)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 519, 21))
+        self.menubar.setGeometry(QRect(0, 0, 671, 21))
         self.menuArchivo = QMenu(self.menubar)
         self.menuArchivo.setObjectName(u"menuArchivo")
         MainWindow.setMenuBar(self.menubar)
@@ -223,7 +242,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.dibujo_tabWidget.setCurrentIndex(1)
+        self.dibujo_tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -261,6 +280,9 @@ class Ui_MainWindow(object):
         self.dibujar_pushButton.setText(QCoreApplication.translate("MainWindow", u"Dibujar", None))
         self.limpiar_pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
         self.dibujo_tabWidget.setTabText(self.dibujo_tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"P\u00e1gina", None))
+        self.distancia_pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Ordenar DISTANCIA (M a m)", None))
+        self.velocidad_pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Ordenar VELOCIDAD (m a M)", None))
+        self.id_pushButton.setText(QCoreApplication.translate("MainWindow", u"Ordenar ID(m a M)", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
     # retranslateUi
 
