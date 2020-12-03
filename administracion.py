@@ -1,5 +1,8 @@
 from particula import Particula
+from pprint import pprint
+from pprint import pformat
 import json
+
 
 class Administracion:
     def __init__(self):
