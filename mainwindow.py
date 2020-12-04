@@ -17,7 +17,8 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.ui.agregarfinal_pushButton.clicked.connect(self.click_agregarfinal)
         self.ui.agregarinicio_pushButton.clicked.connect(self.click_agregarinicio)
-        self.ui.mostrar_pushButton.clicked.connect(self.click_mostrar)
+        self.ui.mostrar_pushButton.clicked.connect(self.dibujar)
+        self.ui.mostrar_pushButton.clicked.connect(self.mostrar_grafos)
 
         self.ui.actionAbrir.triggered.connect(self.action_abrir_archivo)
         self.ui.actionGuardad.triggered.connect(self.action_guardar_archivo)
@@ -25,7 +26,7 @@ class MainWindow(QMainWindow):
         self.ui.mostrar_tabla_pushButton_2.clicked.connect(self.mostrar_tabla)
         self.ui.buscar_pushButton.clicked.connect(self.buscar)
 
-        self.ui.dibujar_pushButton.clicked.connect(self.dibujar)
+        
         self.ui.limpiar_pushButton_2.clicked.connect(self.limpiar)
 
         self.scene = QGraphicsScene()
@@ -35,7 +36,6 @@ class MainWindow(QMainWindow):
         self.ui.distancia_pushButton_2.clicked.connect(self.ord_dis)
         self.ui.velocidad_pushButton_3.clicked.connect(self.ord_vel)
 
-        self.ui.actionGrafo.triggered.connect(self.mostrar_grafos)
 
 
     def wheelEvent(self, event):
@@ -341,10 +341,7 @@ class MainWindow(QMainWindow):
                 "Falla al crear el archivo" + ubicacion
             )
 
-    @Slot() 
-    def click_mostrar(self):
-        self.ui.plainTextEdit.clear()
-        self.ui.plainTextEdit.insertPlainText(str(self.administracion))
+   
 
 
     @Slot()
