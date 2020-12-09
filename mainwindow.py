@@ -7,6 +7,7 @@ from administracion import Administracion
 from pprint import pprint
 from pprint import pformat
 
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -36,6 +37,8 @@ class MainWindow(QMainWindow):
         self.ui.distancia_pushButton_2.clicked.connect(self.ord_dis)
         self.ui.velocidad_pushButton_3.clicked.connect(self.ord_vel)
 
+        self.ui.actionReccorrido_profundidad_amplitud.triggered.connect(self.recorridoap)
+
 
 
     def wheelEvent(self, event):
@@ -43,31 +46,20 @@ class MainWindow(QMainWindow):
             self.ui.graphicsView.scale(1.3, 1.3)
         else:
             self.ui.graphicsView.scale(0.9, 0.9)
-
+            
+    @Slot()
+    def recorridoap(self):
+        self.ui.plainTextEdit.clear()
+        self.ui.plainTextEdit.insertPlainText("Profundidad: \n")
+        self.ui.plainTextEdit.insertPlainText(self.administracion.profundidad(self.ui.origenx_spinBox.value(), self.ui.origeny_spinBox.value()))
+        self.ui.plainTextEdit.insertPlainText("\nAmplitud: \n")
+        self.ui.plainTextEdit.insertPlainText(self.administracion.amplitud(self.ui.origenx_spinBox.value(),self.ui.origeny_spinBox.value()))
+    
     @Slot()
     def mostrar_grafos(self):
-        grafos = dict()
-        grafos = {
-        }
-        for particula in self.administracion:
-            o = (particula.origen_x, particula.origen_y)
-            d = (particula.destino_x, particula.destino_y)
-            ao = (particula.destino_x, particula.destino_y, particula.distancia )
-            ad = (particula.origen_x,particula.origen_y,particula.distancia )
-
-            if o in grafos:
-                grafos[o].append(ao)
-            else:
-                grafos[o] = [ao]
-
-            if d in grafos:
-                grafos[d].append(ad)
-            else:
-                grafos[d] = [ad]
-        str = pformat(grafos, width=40, indent=1)
-        print(str)
         self.ui.plainTextEdit.clear()
-        self.ui.plainTextEdit.insertPlainText(str)
+        self.ui.plainTextEdit.insertPlainText(self.administracion.grafo())
+
 
     @Slot()
     def ord_id(self):
