@@ -7,6 +7,8 @@ import json
 class Administracion:
     def __init__(self):
         self.__particulas = [] 
+        self.grafos = dict()
+        self.grafos = {}
        
 
     def agregar_final(self, particula:Particula):
@@ -57,6 +59,78 @@ class Administracion:
             return 1
         except:
             return 0
+
+    def grafo(self):
+        for particula in self.__particulas:
+            origen = (particula.origen_x,particula.origen_y)
+            destino = (particula.destino_x, particula.destino_y)
+            if origen in self.grafos:
+                if destino in self.grafos[origen]:
+                    pass 
+                else:
+                    self.grafos[origen].append((destino,round(particula.distancia,2)))
+            else:
+                self.grafos[origen] = [(destino,round(particula.distancia,2))]
+
+            if destino in self.grafos:
+                if origen in self.grafos[destino]:
+                    pass
+                else:
+                    self.grafos[destino].append((origen,round(particula.distancia,2)))
+            else:
+                self.grafos[destino] = [(origen,round(particula.distancia,2))]
+        str = pformat(self.grafos, width=40) 
+        return(str)
+
+    def profundidad(self, o_x, o_y):
+        vertice = (o_x, o_y)
+        visitados = []
+        pila = []
+        recorrido = []
+        visitados.append(vertice)
+        pila.append(vertice)
+
+        while len(pila) > 0:
+            vertice = pila[(len(pila)-1)]
+            recorrido.append(vertice)
+            pila.pop()
+
+            for adya in self.grafos[vertice]:
+                if adya[0] in visitados:
+                    pass
+                else:
+                    visitados.append(adya[0])
+                    pila.append(adya[0])
+        str = pformat(recorrido, width=40) 
+        return str
+
+    def amplitud (self, o_x, o_y):
+        vertice = (o_x, o_y)
+        visitados = []
+        cola = []
+        recorrido = []
+        visitados.append(vertice)
+        cola.append(vertice)
+
+        while len(cola) > 0:
+            vertice = cola[(len(cola)-1)]
+            recorrido.append(vertice)
+            cola.pop()
+
+            for adya in self.grafos[vertice]:
+                if adya[0] in visitados:
+                    pass 
+                else:
+                    visitados.append(adya[0])
+                    cola.insert(0,adya[0])
+        str = pformat(recorrido, width=40) 
+        return str
+        
+
+    
+    
+   
+
 
    
 
