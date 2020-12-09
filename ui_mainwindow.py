@@ -24,6 +24,8 @@ class Ui_MainWindow(object):
         self.actionGuardad.setObjectName(u"actionGuardad")
         self.actionGrafo = QAction(MainWindow)
         self.actionGrafo.setObjectName(u"actionGrafo")
+        self.actionReccorrido_profundidad_amplitud = QAction(MainWindow)
+        self.actionReccorrido_profundidad_amplitud.setObjectName(u"actionReccorrido_profundidad_amplitud")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout_5 = QGridLayout(self.centralwidget)
@@ -255,6 +257,8 @@ class Ui_MainWindow(object):
         self.menuArchivo.setObjectName(u"menuArchivo")
         self.menuVer = QMenu(self.menubar)
         self.menuVer.setObjectName(u"menuVer")
+        self.menuAlgoritmos = QMenu(self.menubar)
+        self.menuAlgoritmos.setObjectName(u"menuAlgoritmos")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -262,8 +266,10 @@ class Ui_MainWindow(object):
 
         self.menubar.addAction(self.menuArchivo.menuAction())
         self.menubar.addAction(self.menuVer.menuAction())
+        self.menubar.addAction(self.menuAlgoritmos.menuAction())
         self.menuArchivo.addAction(self.actionAbrir)
         self.menuArchivo.addAction(self.actionGuardad)
+        self.menuAlgoritmos.addAction(self.actionReccorrido_profundidad_amplitud)
 
         self.retranslateUi(MainWindow)
 
@@ -284,6 +290,7 @@ class Ui_MainWindow(object):
         self.actionGuardad.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+D", None))
 #endif // QT_CONFIG(shortcut)
         self.actionGrafo.setText(QCoreApplication.translate("MainWindow", u"Grafo", None))
+        self.actionReccorrido_profundidad_amplitud.setText(QCoreApplication.translate("MainWindow", u"Reccorrido profundidad/amplitud", None))
         self.groupBox.setTitle("")
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Captura de part\u00edculas", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"Colores", None))
@@ -313,5 +320,6 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QCoreApplication.translate("MainWindow", u"Tabla", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
         self.menuVer.setTitle("")
+        self.menuAlgoritmos.setTitle(QCoreApplication.translate("MainWindow", u"Algoritmos", None))
     # retranslateUi
 
